@@ -79,7 +79,7 @@ html {
 
 
 /* ===============================
-Global
+    Global
 =============================== */
 
 a {
@@ -148,10 +148,164 @@ h2 > a:hover:before {
 }
 
 
+/* ===============================
+    History
+=============================== */
+#box {
+    width:100px;
+    height:100px;
+    position: fixed;
+    display: block;
+    z-index: 1 !important;
+}
 
+#box > img {
+    margin:10px;
+}
+
+svg {
+    position: absolute;
+    top: 0;
+    visibility: hidden;
+}
+
+.top {
+    height:500px;
+    background: green;
+    position: display: block;
+}
+.date {
+    position: relative;
+    top: 8%;
+    text-align: center;
+    background: grey;
+}
+
+#first-date {
+    top: 8%;
+}
+
+#second-date {
+    top: 25%;
+}
+
+#third-date {
+    top: 42%;
+}
+
+#fourth-date {
+    top: 60%;
+}
+#fifth-date {
+    top: 75%;
+}
+
+.history footer {
+    position: relative;
+    top: 85%;
+    z-index: 99999999999999999999999999999999999999999;
+}
 
 /* ===============================
-Footer
+    Guide
+=============================== */
+
+h1.guide-title {
+    color: #000;
+    font-size: 60px;
+    text-align: center;
+    margin: 100px 0 0 0;
+}
+
+h2.more-button {
+    width: 30%;
+    color: #fff;
+    padding: 8px 0;
+    font-size: 25px;
+    text-align: center;
+    margin: 40px auto;
+    border-radius: 25px;
+    background: #ff2323;
+    transition: all 1s;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -ms-transition: all 1s;
+    -o-transition: all 1s;
+    cursor: pointer;
+}
+
+h2.more-button:hover {
+    color: #fff;
+    background: #8d1e1e;
+    transition: all 1s;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -ms-transition: all 1s;
+    -o-transition: all 1s;
+}
+
+h2.shop-button {
+    width: 30%;
+    color: #fff;
+    padding: 8px 0;
+    font-size: 25px;
+    text-align: center;
+    margin: 40px auto;
+    background: #eee;
+    border-radius: 25px;
+    background: #218dad;
+    transition: all 1s;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -ms-transition: all 1s;
+    -o-transition: all 1s;
+    cursor: pointer;
+}
+
+h2.shop-button:hover {
+    color: #fff;
+    background: #13566a;
+    transition: all 1s;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -ms-transition: all 1s;
+    -o-transition: all 1s;
+}
+
+body#guide,
+.col-sm-5,
+.guide-overlay {
+    height: 100%;
+}
+
+.drone-buttons {
+    display: block;
+    position: relative;
+    z-index: 999999999999999999 !important;
+}
+
+#hidden-block {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    right: 18%;
+    background: rgb(255, 255, 255);
+    display: block;
+    -webkit-transform: skewX(-13deg);
+    -moz-transform: skewX(-13deg);
+    -o-transform: skewX(-13deg);
+    -ms-transform: skewX(-13deg);
+    transform: skewX(-13deg);
+}
+
+.drone-option {
+    background: url('../img/drone-home.jpg');
+    background-size: cover;
+    height: 80%;
+}
+
+/* ===============================
+    Footer
 =============================== */
 
 footer {
@@ -211,6 +365,10 @@ footer ul li {
 .left-footer {
     background: #65c4ff;
     padding: 1000px;
+}
+
+.right-footer {
+    background: #fff;
 }
 
 @media(max-width:768px) {

@@ -65,45 +65,107 @@
             </nav>
         </section><!-- navbar -->
         
-        <section class="nav-bubbles">
-            <div class="bubble-nav active" id="bubble1">
-                <p>Intro</p>
-                <a href="#tsa-hero"><div class="bubble"></div></a>
-            </div><!-- bubble1 -->
-            <div class="bubble-nav" id="bubble2">
-                <p>Summary</p>
-                <a href="#tsa-summary"><div class="bubble"></div></a>
-            </div><!-- bubble2 -->
-            <div class="bubble-nav" id="bubble3">
-                <p>Undertakings</p>
-                <a href="#tsa-undertakings"><div class="bubble"></div></a>
-            </div><!-- bubble3 -->
-            <div class="bubble-nav" id="bubble4">
-                <p>Officers</p>
-                <a href="#tsa-officers"><div class="bubble"></div></a>
-            </div><!-- bubble4 -->
-            <div class="bubble-nav" id="bubble5">
-                <p>TechEd</p>
-                <a href="#teched"><div class="bubble"></div></a>
-            </div><!-- bubble4 -->
-        </section><!-- nav-bubbles -->
+        
 
-        <section id="tsa-hero">
-           <div class="tsa-hero-overlay">
-                <img src="assets/img/brush.png" class="brush" alt="">
 
-                <div class="tsa-hero-content">
-                    <h1 style="font-weight: 400">Waxahachie Global</h1>
-                     <img src="assets/img/TSA.png" alt="Global High School Wolf Logo Mascot" class="tsa-logo">
-                    <h1><b>Chapter 501</b><span class="invisible">sssss</span></h1>
-                </div><!-- hero-content -->
+        <style>
+            body, html {
+                height: 100%;
+            }
 
-                <div class="tsa-hero-text">
-                    <h1><b>Inspiring excellence</b></h1>
-                    <h1 style="font-weight: 400"><br>Global High's Most Popular Club</h1>
-                </div><!-- hero-content -->
+            .box-hero {
+                padding-top: 2%;
+                height: 100% !important;
+                display: block;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                -webkit-transform: translate3d(0,0,0);
+            }
+            
+            .hero-box {
+                position: absolute;
+                margin-top: 5%;
+            }
+            
+            .box-hero img {
+                position: absolute;
+                right: 6%;
+                top: 34%;
+                width: 35%;
+                z-index: 4
+            }
+            
+            .text-box h1 {
+                text-transform: uppercase;
+                font-size: 8vw !important; /* 100px */
+                font-weight: 350 !important;
+                word-spacing: 40% !important;
+                padding: 30px;
+                background-color: #00FF8C !important:
+            }
+
+            .text-box {
+                position: absolute;
+                left: 10%;
+                top: 10%;
+                width: 40%;
+                background-color: #CC3300;
+                z-index: 4
+            }
+
+            .box1 {
+                background-color: #663333;
+                height: 40%;
+                width: 40%;
+                position: absolute;
+                left: 17%;
+                top: 42%;
+                z-index: 1
+            }
+
+            .box1:hover {
+                -webkit-transform: rotateY(-180deg);
+                transform: rotateY(-180deg);
+                transition: all 1s;
+            }
+
+            .box2 {
+                background-color: #FFCC99;
+                height: 16%;
+                width: 8%;
+                position: absolute;
+                left: 37%;
+                top: 72%;
+                display: block;
+                z-index: 1;
+            }
+
+            .box3 {
+                background-color: #1c1c1c;
+                height: 50%;
+                width: 25%;
+                position: absolute;
+                right: 22%;
+                top: 7%;
+                z-index: 2;
+            }
+            
+            .text-box strong {
+                font-weight: 500 !important;
+                color: #292929;
+            }
+        </style>
+
+        <section class="box-hero" id="tsa-hero">
+            <div class="hero-box text-box" data-scroll-speed="0">
+                <h1>Global High School <strong>TSA</strong></h1>
             </div>
-        </section><!-- tsa-hero -->
+            <div class="hero-box box1" data-scroll-speed="-7"></div>
+            <div class="hero-box box2" data-scroll-speed="2"></div>
+            <div class="hero-box box3" data-scroll-speed="-2"></div>
+            <img src="assets/img/grouptsa.jpg" class="hero-box" alt="" data-scroll-speed="4">
+        </section>
         
         <section id="tsa-summary">
             <div class="container">
