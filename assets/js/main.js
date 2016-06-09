@@ -2,7 +2,7 @@ $(document).ready(function(){
     $(window).load(function(){
         $('#preloader-gif').fadeOut('slow',function(){$(this).remove();});
     });
-    
+
 });
 
 var clicked=true;
@@ -308,7 +308,7 @@ function hideVideo(e) {
 
 // jQuery to collapse the navbar on scroll
 $(window).scroll(function() {
-    if ($(".navbar").offset().top > 200) {
+    if ($(".navbar").offset().top > 400) {
         $(".navbar-fixed-top").addClass("top-nav-collapse");
     } else {
         $(".navbar-fixed-top").removeClass("top-nav-collapse");
@@ -316,9 +316,9 @@ $(window).scroll(function() {
 });
 
 $(window).scroll(function() {
-    if ($(".header-logo").offset().top > 200) {
+    if ($(".header-logo").offset().top > 400) {
         $(".header-logo").addClass("logo-collapse", 1000, "easeInOutQuad");
-    } else 
+    } else {
         $(".header-logo").removeClass("logo-collapse", 1000, "easeInOutQuad");
     }
 });
@@ -343,9 +343,8 @@ $(document).ready(function(){
     });
 });
 
-$(".more-button").click(function(){
-    $(".hidden-block").css("float", "right").show();
-});
+
+
 
 
 
