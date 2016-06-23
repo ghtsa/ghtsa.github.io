@@ -2,16 +2,16 @@ $(document).ready(function(){
     $(window).load(function(){
         $('#preloader-gif').fadeOut('slow',function(){$(this).remove();});
     });
-    
-});
 
+});
 
 var clicked=true;
 $(".home-slider").on('click', function(){
     if(clicked)
     {
         clicked=false;
-        $(".homepage-footer").css({"bottom": 0});
+        $(".homepage-footer").css({"top": 0});
+        $(".homepage-footer").css({"overflow": 'visible'});
     }
 });
 
@@ -21,13 +21,78 @@ $(".footer-close").on('click', function(){
     {
         clicked = true;
         clicked1=true;
-        $(".homepage-footer").css({"bottom": '-110%'});
+        $(".homepage-footer").css({"top": '-110%'});
+        $(".homepage-footer").css({"overflow": 'hidden'});
     }
 });
 
+/*
+Play video on hover Javascript
+By Gaby
+http://stackoverflow.com/questions/26778714/video-play-on-hover
+*/
+var figure = $(".homepage-left");
+var vid = figure.find("video");
+
+[].forEach.call(figure, function (item,index) {
+    item.addEventListener('mouseover', hoverVideo.bind(item,index), false);
+    item.addEventListener('mouseout', hideVideo.bind(item,index), false);
+});
+
+function hoverVideo(index, e) {
+    vid[index].play(); 
+}
+
+function hideVideo(index, e) {
+    vid[index].pause(); 
+}
+
+
+var figure1 = $(".homepage-right");
+var vid1 = figure.find("video");
+
+[].forEach.call(figure1, function (item,index) {
+    item.addEventListener('mouseover', hoverVideo.bind(item,index), false);
+    item.addEventListener('mouseout', hideVideo.bind(item,index), false);
+});
+
+function hoverVideo(index, e) {
+    vid1[index].play(); 
+}
+
+function hideVideo(index, e) {
+    vid1[index].pause(); 
+}
+
+
 /* 
-    Script to make objects scroll at a differnt pace
-    Javascript from Josh Parrett http://codepen.io/JTParrett/pen/BkDie?editors=1010 
+Script to force no horizontal scroll javascript in Safari
+By Dylan Cope
+http://stackoverflow.com/questions/17756649/disable-the-horizontal-scroll
+*/
+
+var scrollEventHandler = function()
+{
+    window.scroll(0, window.pageYOffset)
+}
+
+window.addEventListener("scroll", scrollEventHandler, false);
+
+
+function parallax(e) {
+    window.webkitRequestAnimationFrame(function() {
+        var offset = window.pageYOffset;
+        a.style.top = (offset / 2) + "px";
+        b.style.top = (offset / 2) + "px";
+        textbox.style.top =- (offset * 0.7) + "px";
+        textbox2.style.top =- (offset * 0.7) + "px";
+    });
+}
+
+/* 
+Script to make objects scroll at a differnt pace
+By Josh Parrett 
+http://codepen.io/JTParrett/pen/BkDie?editors=1010 
 */
 $.fn.moveIt = function(){
     var $window = $(window);
@@ -123,17 +188,9 @@ var $w = $(window).scroll(function(){
 
 
 /*
-Filename: HeadImage.js
-Project: rotating heads
-Type: javascript
-Author: Jan Dellsperger
-Initial Version: 14. October 2013
-
 This is the class for the head-image object. Per rotating head one headImage
 object has to be instanciated.
-
-Changelog:
-23.10.2013 - 1px where everyones front picture was shown removed
+By Jan Dellsperger
 */
 var className;
 var imageTop;
@@ -210,9 +267,11 @@ jQuery('.seven').click(function(){
 });
 
 
-/* ===============================
-    http://callmenick.com/2015/01/25/animating-css-only-hamburger-menu-icons/
-=============================== */
+/*
+Hamburger transition tutorial
+By Nick
+http://callmenick.com/2015/01/25/animating-css-only-hamburger-menu-icons/
+*/
 (function() {
 
     "use strict";
@@ -265,9 +324,11 @@ $(window).scroll(function() {
 });
 
 
-/* ===============================
-    http://callmenick.com/2014/02/11/simple-tabbed-content-area-with-css-and-jquery/
-=============================== */
+/*
+Tabbable content
+By Nick
+http://callmenick.com/2014/02/11/simple-tabbed-content-area-with-css-and-jquery/
+ */
 // Tabbable Content
 $(document).ready(function(){
     $("ul#tabs li").click(function(e){
@@ -281,10 +342,5 @@ $(document).ready(function(){
         }
     });
 });
-
-
-
-
-
 
 
