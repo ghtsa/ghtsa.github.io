@@ -367,7 +367,7 @@ section#homepage,
 }
 
 .mobile-drones {
-    background: url('../img/drone-mobile.jpg') center center;
+    background: url('../img/drone1.jpg') center center;
     margin: 0 auto;
 }
 
@@ -382,181 +382,7 @@ section#homepage,
     font-weight: 200;
 }
 
-.homepage-footer {
-    height: 100%;
-    width: 100%;
-    display: block;
-    position: absolute;
-    top: -110%;
-    -webkit-transition: top 1s;
-    -moz-transition: top 1s;
-    -o-transition: top 1s;
-    transition: top 1s;
-    overflow: hidden;
 
-}
-
-.footer-close {
-    font-size: 70px;
-    position: absolute;
-    background:#009dff;
-    padding: 10px 20px !important;
-    top: 0;
-    right: 0;
-    color: #fff;
-    cursor: pointer !important;
-    z-index: 9999999999999;
-    -webkit-transition: all.5s ease-in-out;
-    -moz-transition: all .5s ease-in-out;
-    -o-transition: all .5s ease-in-out;
-    transition: all .5s ease-in-out;
-}
-
-.footer-close:hover {
-    background:#ffffff;
-    color: #009dff;
-    -webkit-transition: all.5s ease-in-out;
-    -moz-transition: all .5s ease-in-out;
-    -o-transition: all .5s ease-in-out;
-    transition: all .5s ease-in-out;
-}
-
-.footer-close-x {
-    width: 100%;
-    height: 100%;
-    -webkit-transition: all.5s ease-in-out;
-    -moz-transition: all .5s ease-in-out;
-    -o-transition: all .5s ease-in-out;
-    transition: all .5s ease-in-out;
-}
-
-.footer-close-x:hover {
-    -webkit-transition: all.5s ease-in-out;
-    -moz-transition: all .5s ease-in-out;
-    -o-transition: all .5s ease-in-out;
-    transition: all .5s ease-in-out;
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-}
-
-.about-contact {
-    background: rgba(255, 255, 255, 0.95);
-    height: 100%;
-    padding: 0 50px;
-}
-
-.about-info {
-    background: rgba(0, 157, 255, 0.95);
-    height: 100% !important;
-    display:block;
-    overflow:auto;
-}
-
-.about-info .row {
-    background: rgba(0, 157, 255, 0.95);
-    height: auto!important;
-    display:block;
-    overflow:auto;
-}
-
-.about-contact h1 {
-    text-shadow: 0px 0px rgba(0, 0, 0, 0) !important;
-    color: #009dff !important;
-    font-size: 45px !important;
-    margin: 15px 0 50px 0 !important;
-    text-transform: uppercase;
-    font-weight: 900;
-}
-
-.about-contact h5 {
-    display: inline-block;
-    font-size: 30px;
-    padding-left: 25px;
-    vertical-align: middle;
-    font-weight: 400;
-}
-
-.contact-block {
-    margin: 20% 0;
-}
-
-.about-footer a {
-    color: #626262 !important;
-}
-
-.about-footer a:hover {
-    color: #e5e5e5 !important;
-}
-
-.about-contact i {
-    color: #5d5d5d !important;
-    text-align: center;
-    font-size: 70px;
-    border-right: 3px solid #5d5d5d;
-    padding-right: 10px;
-    display: inline-block;
-    vertical-align: middle;
-    width: 100px;
-}
-
-.about-info h2 {
-    color: #fff;
-    font-size: 75px;
-    margin-left: 10%;
-    margin-top: 50px;
-    font-weight: 800;
-}
-@media (max-width: 1108px) {
-    .about-contact h5 {
-        font-size: 20px;
-    }
-    .about-contact i {
-        color: #5d5d5d !important;
-        text-align: center;
-        font-size: 40px;
-        border-right: 3px solid #5d5d5d;
-        padding-right: 10px;
-        display: inline-block;
-        vertical-align: middle;
-        width: 60px;
-    }
-
-    .about-contact {
-        background: rgba(255, 255, 255, 0.95);
-        height: 100%;
-        padding: 0 10px;
-    }
-}
-
-@media (max-width: 768px) {
-    .about-info h2 {
-        color: #fff;
-        font-size: 45px !important;
-        margin-left: 10%;
-        margin-top: 50px;
-        font-weight: 800;
-    }
-    
-    .about-contact {
-        text-align: center !important;
-    }
-    
-    .home-slider h2 {
-        padding: 10px 0 !important;
-        font-size: 17px;
-        transition: all .5s ease-in-out;
-    }
-
-}
-
-
-.about-info p {
-    color: #fff;
-    font-size: 25px;
-    margin-left: 15%;
-    margin-top: 30px;
-    font-weight: 500;
-}
 
 .relative {
     position: relative;
@@ -984,10 +810,6 @@ ul {
 #tsa h1, #drones h1 {
     font-size: 30px;
     font-weight: 200;
-}
-
-#tsa-hero {
-    
 }
 
 .tsa-hero-overlay {

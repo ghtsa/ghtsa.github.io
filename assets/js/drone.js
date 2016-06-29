@@ -71,6 +71,33 @@ $(function() {
 
 
 
+/* 
+Script to force no horizontal scroll javascript in Safari
+By Dylan Cope
+http://stackoverflow.com/questions/17756649/disable-the-horizontal-scroll
+*/
+
+var scrollEventHandler = function()
+{
+    window.scroll(0, window.pageYOffset)
+}
+
+window.addEventListener("scroll", scrollEventHandler, false);
+
+
+function parallax(e) {
+    window.webkitRequestAnimationFrame(function() {
+        var offset = window.pageYOffset;
+        a.style.top = (offset / 2) + "px";
+        b.style.top = (offset / 2) + "px";
+        textbox.style.top =- (offset * 0.7) + "px";
+        textbox2.style.top =- (offset * 0.7) + "px";
+    });
+}
+
+
+
+
 
 
 // jQuery to collapse the navbar on scroll
@@ -208,7 +235,24 @@ $(".left-slideshow").click(function(){
 
 
 
-
+/*
+Tabbable content
+By Nick
+http://callmenick.com/2014/02/11/simple-tabbed-content-area-with-css-and-jquery/
+ */
+// Tabbable Content
+$(document).ready(function(){
+    $("ul#tabs li").click(function(e){
+        if (!$(this).hasClass("active")) {
+            var tabNum = $(this).index();
+            var nthChild = tabNum+1;
+            $("ul#tabs li.active").removeClass("active");
+            $(this).addClass("active");
+            $("ul#tab li.active").removeClass("active");
+            $("ul#tab li:nth-child("+nthChild+")").addClass("active");
+        }
+    });
+});
 
 
 
@@ -238,5 +282,9 @@ $(document).ready(function () {
     $("#floating-drone").animate({"left": "90%"},800); 
 }
 setTimeout(yourFunction, 500);
-    
+   
+
+
+
+
 

@@ -132,15 +132,15 @@
             //EDIT ADDED IN FOR FLOATING DRONE MOVEMENT BY LEVI VILLARREAL
             var drone_pos = pos / -100 + 1
             if (drone_pos == 1){
-                $("#floating-drone").animate({"left": "43.5%", "top": "40%"},800); 
+                $("#floating-drone").animate({"width": "100%", "left": "0", "top": "40%"},800); 
             } else if (drone_pos == 2){
-                $("#floating-drone").animate({"left": "7%", "top": "3%"},800); 
+                $("#floating-drone").animate({"width": "200px", "left": "7%", "top": "3%"},800); 
             } else if (drone_pos == 3){
-                $("#floating-drone").animate({"left": "83%", "top": "3%"},800);
+                $("#floating-drone").animate({"width": "200px", "left": "83%", "top": "3%"},800);
             } else if (drone_pos == 4){
-                $("#floating-drone").animate({"left": "7%", "top": "3%"},800); 
+                $("#floating-drone").animate({"width": "200px", "left": "7%", "top": "3%"},800); 
             } else if (drone_pos == 5){
-                $("#floating-drone").animate({"left": "83%", "top": "3%"},800);
+                $("#floating-drone").animate({"width": "200px", "left": "83%", "top": "3%"},800);
             }
     	}
       $(this).one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(e) {
