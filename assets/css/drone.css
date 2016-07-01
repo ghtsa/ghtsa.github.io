@@ -1420,8 +1420,10 @@ svg {
 }
 
 body#history {
-   /* background: url('../img/drone-path.png')  */  
+    background: url('../img/drone-path.png'); 
 }
+
+
 /* ===============================
     Guide
 =============================== */
