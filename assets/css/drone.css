@@ -594,6 +594,12 @@ body, html {
     padding: 30px;
 }
 
+@media(max-width:767px) {
+    .text-box h1 {
+        font-size: 6vw !important; /* 100px */
+    }
+}
+
 #guide .text-box h1 {
     background-color: #00FF8C !important:
 }
