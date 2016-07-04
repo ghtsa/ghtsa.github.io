@@ -598,6 +598,11 @@ body, html {
     .text-box h1 {
         font-size: 5vw !important; /* 100px */
     }
+    
+    .box-hero {
+        height: 90vh;
+    }
+
 }
 
 #guide .text-box h1 {
