@@ -10,7 +10,7 @@ Coded w/ love <3
 /* ===============================
     General
 =============================== */
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
 v2.0 | 20110126
 License: none (public domain)
 */
@@ -24,8 +24,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
     margin: 0;
@@ -36,7 +36,7 @@ time, mark, audio, video {
     vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
     display: block;
 }
@@ -141,7 +141,7 @@ a {
     -ms-transition: all 1s;
     -webkit-transition: all 1s;
     color: #3f7ff8;
-    transition: all 1s;  
+    transition: all 1s;
     text-decoration: none !important;
     background: none !important;
 }
@@ -151,7 +151,7 @@ a:hover {
     -o-transition: all 1s;
     -ms-transition: all 1s;
     -webkit-transition: all 1s;
-    transition: all 1s;    
+    transition: all 1s;
     color: #000000;
 }
 
@@ -450,7 +450,7 @@ ul {
     height: 60px;
     font-size: 0;
     text-indent: -9999px;
-    appearance: none; 
+    appearance: none;
     box-shadow: none;
     border-radius: none;
     border: none;
@@ -598,7 +598,7 @@ body, html {
     .text-box h1 {
         font-size: 5vw !important; /* 100px */
     }
-    
+
     .box-hero {
         height: 90vh;
     }
@@ -847,11 +847,11 @@ h1 {
 
 .right-img h2 {
     text-align: left;
-    padding-bottom: 10px;   
+    padding-bottom: 10px;
 }
 
 #drone-slideshow1 .right-img h2,
-#drone-slideshow1 .left-img h2 
+#drone-slideshow1 .left-img h2
 {
     border-bottom: 5px solid #331E38;
 }
@@ -902,7 +902,7 @@ h1 {
 
 .left-img img {
     height: 100%;
-    float: left;    
+    float: left;
 }
 
 #drone-slideshow3 .slide4 {
@@ -917,7 +917,7 @@ h1 {
     height:100%
 }
 .split-img img {
-    height: 100% !important;    
+    height: 100% !important;
 }
 
 .split-img p {
@@ -949,7 +949,6 @@ h1 {
     float: left;
     padding: 15px;
 }
-
 
 .slideshow-arrow {
     height: 100vh;
@@ -1228,11 +1227,11 @@ figure {
     .drone-slideshow iframe {
         display: none !important;
     }
-    
+
     .custom-slide {
         margin-top: 50px;
     }
-    
+
     .custom-slide h1 {
         padding: 0 10px;
         margin-top: 46%;
@@ -1246,18 +1245,18 @@ figure {
         font-size: 50px;
         text-transform: uppercase;
     }
-    
+
     .custom-slide p {
         padding: 0 25px !important;
         text-align: left !important;
         margin: 10px !important;
         font-size: 15px;
     }
-    
+
     .custom-slide h2 {
         text-align: center!important;
     }
-    
+
     #floating-drone {
         display: none;
     }
@@ -1297,7 +1296,7 @@ figure {
         -ms-transition: all 1s;
         -o-transition: all 1s;
     }
-    
+
     .slideshow-arrow {
         width: 30px;
         font-size: 40px;
@@ -1306,19 +1305,19 @@ figure {
     .slideshow-arrow:hover {
         width: 40px;
     }
-    
+
     .custom-slide span.not {
         display: none;
     }
-    
+
     .onepage-pagination {
         display: none;
     }
-    
+
     h2.split-lead {
         display: none;
     }
-    
+
     .col-left, .col-right {
         padding: 0;
         border: 0px
@@ -1431,7 +1430,7 @@ svg {
 }
 
 body#history {
-    background: url('../img/drone-path.png'); 
+    background: url('../img/drone-path.png');
 }
 
 
@@ -1692,7 +1691,7 @@ body#guide .col-sm-5,
     .drone-reveal {
         overflow: scroll;
     }
-    
+
     .drone-button {
         font-size: 15px;
     }
@@ -1807,7 +1806,7 @@ body#guide .col-sm-5,
 
 .photo-grid .col-lg-4{
     height: 300px;
-    overflow: hidden; 
+    overflow: hidden;
     margin: 0;
     padding: 0;
     text-align: center;
@@ -1822,7 +1821,7 @@ body#guide .col-sm-5,
 .photo-gallery-title {
     text-align: center;
     margin-bottom: 30px;
-} 
+}
 
 .box {
     display: block;
@@ -1883,8 +1882,8 @@ body#guide .col-sm-5,
     }
 }
 
-.container-fluid, 
-.photoset .col-sm-6, 
+.container-fluid,
+.photoset .col-sm-6,
 .photoset .col-sm-4  {
     padding: 0 !important;
     margin: 0 !important;
@@ -1903,21 +1902,21 @@ body#guide .col-sm-5,
 ul#tabs li {
     list-style-type: none;
     display: inline-block;
-}   
+}
 
 ul#tabs li.active img{
     border-color: #65c4ff;
-}   
+}
 
 ul#tab li {
     display: none;
     list-style-type: none;
     height: 100%;
-}   
+}
 
 ul#tab li.active {
     display: block;
-} 
+}
 
 #tab {
     text-align: center;
@@ -1935,7 +1934,7 @@ ul#tab li.active {
     ul#tabs li {
         padding: 15px 0 !important;
         display: block;
-    }   
+    }
 
     ul#tabs li.active {
         color: #65c4ff
@@ -2045,7 +2044,7 @@ footer ul li {
 }
 
 .copyright-checklist h1.lead {
-    text-align: center !important; 
+    text-align: center !important;
 }
 
 .copyright-checklist {
@@ -2058,8 +2057,8 @@ footer ul li {
 /* ===============================
 Assets
 =============================== */
-/* Clearfix (includes support for older browsers) 
-http://stackoverflow.com/questions/8554043/what-is-clearfix 
+/* Clearfix (includes support for older browsers)
+http://stackoverflow.com/questions/8554043/what-is-clearfix
 */
 .clearfix:after {
     content: " "; /* Older browser do not support empty content */
