@@ -1,132 +1,320 @@
-$(document).ready(function(){
-    $(window).load(function(){
-        $('#preloader-gif').fadeOut('slow',function(){$(this).remove();});
-    });
 
-});
+/* If click on layer than layer pops up
 
-var clicked=true;
-$(".home-slider").on('click', function(){
-    if(clicked)
-    {
-        clicked=false;
-        $(".homepage-footer").css({"top": 0});
-        $(".homepage-footer").css({"overflow": 'visible'});
+$("img.layer-image").click(function(){
+    if ($(this).hasClass('active')) {
+        // Rotate layer until its skewed
+        $(this).closest('.layer').css({'transform' : 'rotateX(75deg)'});
+        
+        //Check the layer to set the z-index
+        if($(this).hasClass('layer1')) {
+            $(this).closest('.layer').css({ 'z-index' : '3'}); 
+        } else if($(this).hasClass('layer2')) {
+            $(this).closest('.layer').css({ 'z-index' : '2'}); 
+        } else if($(this).hasClass('layer3')) {
+            $(this).closest('.layer').css({ 'z-index' : '1'}); 
+        } else {
+            //else code n/a
+        }
+        
+        // set background slightly transparent
+        $(this).css({'background' : 'rgba(255, 255, 255, 0.65)'});
+        //remove active class
+        $(this).removeClass("active");
+        
+    } else {
+        if ($(".layer1").hasClass('active')) {
+            $(".layer1").closest('.layer').css({'transform' : 'rotateX(75deg)'});
+            $(".layer1").closest('.layer').css({ 'z-index' : '3'}); 
+            $(".layer1").removeClass("active");
+        } else if ($(".layer2").hasClass('active')) {
+            $(".layer2").closest('.layer').css({'transform' : 'rotateX(75deg)'});
+            $(".layer2").closest('.layer').css({ 'z-index' : '2'}); 
+            $(".layer2").removeClass("active");
+        } else if ($(".layer3").hasClass('active')) {
+            $(".layer3").closest('.layer').css({'transform' : 'rotateX(75deg)'});
+            $(".layer3").closest('.layer').css({ 'z-index' : '1'}); 
+            $(".layer3").removeClass("active");
+        }
+        // make flat and change z-index
+        $(this).closest('.layer').css({'transform' : 'rotateX(0deg)', 'z-index' : '10000'});
+        //make background opaque
+        $(this).css({'background' : '#fff'});
+        //add active class
+        $(this).addClass("active");
     }
 });
-
-var clicked1=true;
-$(".footer-close").on('click', function(){
-    if(clicked1)
-    {
-        clicked = true;
-        clicked1=true;
-        $(".homepage-footer").css({"top": '-110%'});
-        $(".homepage-footer").css({"overflow": 'hidden'});
-    }
-});
-
-/*
-Play video on hover Javascript
-By Gaby
-http://stackoverflow.com/questions/26778714/video-play-on-hover
-*/
-var figure = $(".homepage-left");
-var vid = figure.find("video");
-
-[].forEach.call(figure, function (item,index) {
-    item.addEventListener('mouseover', hoverVideo.bind(item,index), false);
-    item.addEventListener('mouseout', hideVideo.bind(item,index), false);
-});
-
-function hoverVideo(index, e) {
-    vid[index].play(); 
-}
-
-function hideVideo(index, e) {
-    vid[index].pause(); 
-}
-
-
-var figure1 = $(".homepage-right");
-var vid1 = figure.find("video");
-
-[].forEach.call(figure1, function (item,index) {
-    item.addEventListener('mouseover', hoverVideo.bind(item,index), false);
-    item.addEventListener('mouseout', hideVideo.bind(item,index), false);
-});
-
-function hoverVideo(index, e) {
-    vid1[index].play(); 
-}
-
-function hideVideo(index, e) {
-    vid1[index].pause(); 
-}
-
-
-/* 
-Script to force no horizontal scroll javascript in Safari
-By Dylan Cope
-http://stackoverflow.com/questions/17756649/disable-the-horizontal-scroll
 */
 
-var scrollEventHandler = function()
-{
-    window.scroll(0, window.pageYOffset)
-}
-
-window.addEventListener("scroll", scrollEventHandler, false);
-
-
-function parallax(e) {
-    window.webkitRequestAnimationFrame(function() {
-        var offset = window.pageYOffset;
-        a.style.top = (offset / 2) + "px";
-        b.style.top = (offset / 2) + "px";
-        textbox.style.top =- (offset * 0.7) + "px";
-        textbox2.style.top =- (offset * 0.7) + "px";
-    });
-}
-
-/* 
-Script to make objects scroll at a differnt pace
-By Josh Parrett 
-http://codepen.io/JTParrett/pen/BkDie?editors=1010 
-*/
-$.fn.moveIt = function(){
-    var $window = $(window);
-    var instances = [];
-
-    $(this).each(function(){
-        instances.push(new moveItItem($(this)));
+$(document).ready(function ( ) {
+    $(window).load(function ( ) {
+        $('#preloader-gif').fadeOut('slow', function ( ){$(this).remove ();});
     });
 
-    window.onscroll = function(){
-        var scrollTop = $window.scrollTop();
-        instances.forEach(function(inst){
-            inst.update(scrollTop);
+});
+
+$(".layer").click(function(){
+    if ($( this ).hasClass("layer-active")) {
+        $('.layer').removeClass('layer-active');
+        $('.pulse_holder').css({
+            'opacity' : '0',
+            'display' : 'none', 
         });
+        $('.layer').removeClass('layer-active');
+    } else {
+        $('.layer').removeClass('layer-active');
+        $('.pulse_holder').css({
+            'opacity' : '0',
+            'display' : 'none', 
+        });
+        $( this ).addClass('layer-active');
     }
-}
+    
+});
 
-var moveItItem = function(el){
-    this.el = $(el);
-    this.speed = parseInt(this.el.attr('data-scroll-speed'));
-};
+$(".dropdown-item").click(function(){
+    $('.layer').removeClass('layer-active');
+    $('.map-info').removeClass('map-display');
+    $('.pulse_holder').css({
+        'opacity' : '0',
+        'display' : 'none', 
+    });
+});
 
-moveItItem.prototype.update = function(scrollTop){
-    var pos = scrollTop / this.speed;
-    this.el.css('transform', 'translateY(' + -pos + 'px)');
-};
+$("a.bio").click(function(){
+    $('.third-layer').addClass('layer-active');
+    $('.map-bio').addClass('map-display');
+    $('.pulse_holder').css({
+        'opacity' : '0',
+        'display' : 'block', 
+        'top' : '425px', 
+        'left' : '92px'
+    }).show().animate({opacity:1});
+});
 
-$(function() {
-    $('[data-scroll-speed]').moveIt();
+$("a.chem").click(function(){
+    $('.third-layer').addClass('layer-active')
+    $('.map-chem').addClass('map-display')
+    $('.pulse_holder').css({
+        'opacity' : '0',
+        'display' : 'block', 
+        'top' : '550px', 
+        'left' : '235px'
+    }).show().animate({opacity:1});
+});
+
+$("a.psy").click(function(){
+    $('.third-layer').addClass('layer-active')
+    $('.map-psy').addClass('map-display')
+    $('.pulse_holder').css({
+        'opacity' : '0',
+        'display' : 'block', 
+        'top' : '450px', 
+        'left' : '240px'
+    }).show().animate({opacity:1});
+});
+
+$("a.dcbio").click(function(){
+    $('.third-layer').addClass('layer-active')
+    $('.map-dcbio').addClass('map-display')
+    $('.pulse_holder').css({
+        'opacity' : '0',
+        'display' : 'block', 
+        'top' : '425px', 
+        'left' : '92px'
+    }).show().animate({opacity:1});
+});
+
+$("a.dcchem").click(function(){
+    $('.third-layer').addClass('layer-active')
+    $('.map-dcchem').addClass('map-display')
+    $('.pulse_holder').css({
+        'opacity' : '0',
+        'display' : 'block', 
+        'top' : '490px', 
+        'left' : '150px'
+    }).show().animate({opacity:1});
+});
+
+$("a.ied").click(function(){
+    $('.third-layer').addClass('layer-active')
+    $('.map-ied').addClass('map-display')
+    $('.pulse_holder').css({
+        'opacity' : '0',
+        'display' : 'block', 
+        'top' : '315px', 
+        'left' : '285px'
+    }).show().animate({opacity:1});
+});
+
+$("a.civ").click(function(){
+    $('.third-layer').addClass('layer-active')
+    $('.map-civ').addClass('map-display')
+    $('.pulse_holder').css({
+        'opacity' : '0',
+        'display' : 'block', 
+        'top' : '450px', 
+        'left' : '240px'
+    }).show().animate({opacity:1});
+});
+
+$("a.poe").click(function(){
+    $('.third-layer').addClass('layer-active')
+    $('.map-poe').addClass('map-display')
+    $('.pulse_holder').css({
+        'opacity' : '0',
+        'display' : 'block', 
+        'top' : '375px', 
+        'left' : '285px'
+    }).show().animate({opacity:1});
+});
+
+$("a.robo").click(function(){
+    $('.third-layer').addClass('layer-active')
+    $('.map-robo').addClass('map-display')
+    $('.pulse_holder').css({
+        'opacity' : '0',
+        'display' : 'block', 
+        'top' : '550px', 
+        'left' : '275px'
+    }).show().animate({opacity:1});
+});
+
+$("a.cim").click(function(){
+    $('.third-layer').addClass('layer-active')
+    $('.map-cim').addClass('map-display')
+    $('.pulse_holder').css({
+        'opacity' : '0',
+        'display' : 'block', 
+        'top' : '200px', 
+        'left' : '220px'
+    }).show().animate({opacity:1});
+});
+
+$("a.elec").click(function(){
+    $('.third-layer').addClass('layer-active')
+    $('.map-elec').addClass('map-display')
+    $('.pulse_holder').css({
+        'opacity' : '0',
+        'display' : 'block', 
+        'top' : '200px', 
+        'left' : '220px'
+    }).show().animate({opacity:1});
+});
+
+$("a.alg").click(function(){
+    $('.second-layer').addClass('layer-active')
+    $('.map-alg').addClass('map-display')
+    $('.pulse_holder').css({
+        'opacity' : '0',
+        'display' : 'block', 
+        'top' : '460px', 
+        'left' : '80px'
+    }).show().animate({opacity:1});
+});
+
+$("a.geo").click(function(){
+    $('.second-layer').addClass('layer-active')
+    $('.map-geo').addClass('map-display')
+    $('.pulse_holder').css({
+        'opacity' : '0',
+        'display' : 'block', 
+        'top' : '340px', 
+        'left' : '58px'
+    }).show().animate({opacity:1});
+});
+
+$("a.trig").click(function(){
+    $('.third-layer').addClass('layer-active')
+    $('.map-trig').addClass('map-display')
+    $('.pulse_holder').css({
+        'opacity' : '0',
+        'display' : 'block', 
+        'top' : '500px', 
+        'left' : '375px'
+    }).show().animate({opacity:1});
+});
+
+$("a.calc").click(function(){
+    $('.third-layer').addClass('layer-active')
+    $('.map-calc').addClass('map-display')
+    $('.pulse_holder').css({
+        'opacity' : '0',
+        'display' : 'block', 
+        'top' : '500px', 
+        'left' : '375px'
+    }).show().animate({opacity:1});
+});
+
+$("a.stat").click(function(){
+    $('.third-layer').addClass('layer-active')
+    $('.map-stat').addClass('map-display')
+    $('.pulse_holder').css({
+        'opacity' : '0',
+        'display' : 'block', 
+        'top' : '500px', 
+        'left' : '375px'
+    }).show().animate({opacity:1});
+});
+
+$("a.pit").click(function(){
+    $('.third-layer').addClass('layer-active')
+    $('.map-pit').addClass('map-display')
+    $('.pulse_holder').css({
+        'opacity' : '0',
+        'display' : 'block', 
+        'top' : '425px', 
+        'left' : '150px'
+    }).show().animate({opacity:1});
+});
+
+$("a.net").click(function(){
+    $('.third-layer').addClass('layer-active')
+    $('.map-net').addClass('map-display')
+    $('.pulse_holder').css({
+        'opacity' : '0',
+        'display' : 'block', 
+        'top' : '370px', 
+        'left' : '330px'
+    }).show().animate({opacity:1});
+});
+
+$("a.main").click(function(){
+    $('.third-layer').addClass('layer-active')
+    $('.map-main').addClass('map-display')
+    $('.pulse_holder').css({
+        'opacity' : '0',
+        'display' : 'block', 
+        'top' : '370px', 
+        'left' : '330px'
+    }).show().animate({opacity:1});
+});
+
+$("a.prog").click(function(){
+    $('.third-layer').addClass('layer-active')
+    $('.map-prog').addClass('map-display')
+    $('.pulse_holder').css({
+        'opacity' : '0',
+        'display' : 'block', 
+        'top' : '315px', 
+        'left' : '285px'
+    }).show().animate({opacity:1});
+});
+
+$("a.anim").click(function(){
+    $('.third-layer').addClass('layer-active')
+    $('.map-anim').addClass('map-display')
+    $('.pulse_holder').css({
+        'opacity' : '0',
+        'display' : 'block', 
+        'top' : '315px', 
+        'left' : '285px'
+    }).show().animate({opacity:1});
 });
 
 
 
-
+//Scroll transition when click on link
 $(document).ready(function () {
     $('a[href^="#"]').on('click',function (e) {
         e.preventDefault();
@@ -143,49 +331,128 @@ $(document).ready(function () {
 });
 
 
+function parallax(e) {
+    window.webkitRequestAnimationFrame(function() {
+        var offset = window.pageYOffset;
+        a.style.top = (offset / 2) + "px";
+        b.style.top = (offset / 2) + "px";
+        textbox.style.top =- (offset * 0.7) + "px";
+        textbox2.style.top =- (offset * 0.7) + "px";
+    });
+}
 
-var targetOffset = $("#teched").offset().top;
-var targetOffset1 = $("#tsa-officers").offset().top;
-var targetOffset2 = $("#tsa-undertakings").offset().top;
-var targetOffset3 = $("#tsa-summary").offset().top;
-var targetOffset4 = $("#tsa-hero").offset().top;
+/*
+    Hamburger transition tutorial
+    By Nick
+    http://callmenick.com/2015/01/25/animating-css-only-hamburger-menu-icons/
+*/
+$(document).ready(function(){
+
+    (function() {
+
+        "use strict";
+
+        var toggles = document.querySelectorAll(".c-hamburger");
 
 
-var $w = $(window).scroll(function(){
-    if ( $w.scrollTop() >= targetOffset ) {   
-        $('#bubble1').removeClass("active");
-        $('#bubble2').removeClass("active");
-        $('#bubble3').removeClass("active");
-        $('#bubble4').removeClass("active");
-        $('#bubble5').addClass("active");
-    } else if ( $w.scrollTop() >= targetOffset1 ) {
-        $('#bubble1').removeClass("active");
-        $('#bubble2').removeClass("active");
-        $('#bubble3').removeClass("active");
-        $('#bubble5').removeClass("active");
-        $('#bubble4').addClass("active");
-    } else if ( $w.scrollTop() >= targetOffset2 ) {
-        $('#bubble1').removeClass("active");
-        $('#bubble2').removeClass("active");
-        $('#bubble4').removeClass("active");
-        $('#bubble5').removeClass("active");
-        $('#bubble3').addClass("active");
-    } else if ( $w.scrollTop() >= targetOffset3 ) {
-        $('#bubble1').removeClass("active");
-        $('#bubble3').removeClass("active");
-        $('#bubble4').removeClass("active");
-        $('#bubble5').removeClass("active");
-        $('#bubble2').addClass("active");
-    } else  if ( $w.scrollTop() >= targetOffset4 ) {
-        $('#bubble2').removeClass("active");
-        $('#bubble3').removeClass("active");
-        $('#bubble54').removeClass("active");
-        $('#bubble5').removeClass("active");
-        $('#bubble1').addClass("active");
+        for (var i = toggles.length - 1; i >= 0; i--) {
+            var toggle = toggles[i];
+            toggleHandler(toggle);
+        };
+
+        function toggleHandler(toggle) {
+            toggle.addEventListener( "click", function(e) {
+                e.preventDefault();
+                (this.classList.contains("is-active") === true) ? this.classList.remove("is-active") : this.classList.add("is-active");
+                
+                
+    
+            });
+        }
+
+    })();
+});
+
+
+// Navbar Code
+
+
+$("#nav").click(function() {
+    var width = $(window).width() - 68;
+    
+    if ($(".c-hamburger").hasClass("is-active")) {
+        $(".c-hamburger").animate({
+            right: "20px", 
+        }, {
+            duration: 150,
+            easing: 'easeInOutQuint'
+        });
+        $("#nav-expand").animate({
+            width: "100%"
+        }, {
+            duration: 1500,
+            easing: 'easeInOutQuint'
+        });
+        $(".nav-list").animate({
+            left: "0%"
+        }, {
+            duration: 300,
+            easing: 'easeInOutQuint'
+        });
+        $(".c-hamburger").css({'transform' : 'rotate(180deg)'});
+        
+    } else {
+        $(".c-hamburger").animate({right: width + "px"}, {
+            duration: 150,
+            easing: 'easeInOutQuint'
+        });
+        $("#nav-expand").animate({
+            width: "0%"
+        }, {
+            duration: 1500,
+            easing: 'easeInOutQuint'
+        });
+        $(".nav-list").animate({
+            left: "-100%"
+        }, {
+            duration: 400,
+            easing: 'easeInOutQuint'
+        });
+        $(".c-hamburger").css({'transform' : 'rotate(0deg)'});
+    }
+});
+
+$(".nav-one").mouseover(function(){
+    $('#nav-expand').css('background-image', 'url(assets/img/nav1.JPG)');
+});
+$(".nav-two").mouseover(function(){
+    $('#nav-expand').css('background-image', 'url(assets/img/nav2.JPG)');
+});
+$(".nav-three").mouseover(function(){
+    $('#nav-expand').css('background-image', 'url(assets/img/nav3.JPG)');
+});
+$(".nav-four").mouseover(function(){
+    $('#nav-expand').css('background-image', 'url(assets/img/nav4.JPG)');
+});
+$(".nav-five").mouseover(function(){
+    $('#nav-expand').css('background-image', 'url(assets/img/sample6.JPG)');
+});
+
+$(".nav-list a").mouseout(function(){
+    $('#nav-expand').css('background-image', 'url(assets/img/nav.JPG)');
+});
+
+// jQuery to collapse the navbar on scroll
+$(window).scroll(function() {
+    if ($(".navbar").offset().top > 400) {
+        $(".navbar-fixed-top").addClass("top-nav-collapse");
+    } else {
+        $(".navbar-fixed-top").removeClass("top-nav-collapse");
     }
 });
 
 
+// Rotating Officer Heads
 
 /*
 This is the class for the head-image object. Per rotating head one headImage
@@ -237,110 +504,31 @@ function HeadImage(className){
     };
 }
 
-jQuery('.one').click(function(){
+$('.one img').click(function(){
     $(".officer-info").removeClass("active");
     $(".levi").addClass("active");
 });
-jQuery('.two').click(function(){
+$('.two img').click(function(){
     $(".officer-info").removeClass("active");
     $(".sam").addClass("active");
 });
-jQuery('.three').click(function(){
+$('.three img').click(function(){
     $(".officer-info").removeClass("active");
-    $(".chris").addClass("active");
+    $(".jessica").addClass("active");
 });
-jQuery('.four').click(function(){
+$('.four img').click(function(){
     $(".officer-info").removeClass("active");
     $(".michael").addClass("active");
 });
-jQuery('.five').click(function(){
+$('.five img').click(function(){
     $(".officer-info").removeClass("active");
-    $(".brittany").addClass("active");
+    $(".isabell").addClass("active");
 });
-jQuery('.six').click(function(){
+$('.six img').click(function(){
     $(".officer-info").removeClass("active");
     $(".jenna").addClass("active");
 });
-jQuery('.seven').click(function(){
+$('.seven img').click(function(){
     $(".officer-info").removeClass("active");
     $(".luke").addClass("active");
 });
-
-
-/*
-Hamburger transition tutorial
-By Nick
-http://callmenick.com/2015/01/25/animating-css-only-hamburger-menu-icons/
-*/
-(function() {
-
-    "use strict";
-
-    var toggles = document.querySelectorAll(".c-hamburger");
-
-    for (var i = toggles.length - 1; i >= 0; i--) {
-        var toggle = toggles[i];
-        toggleHandler(toggle);
-    };
-
-    function toggleHandler(toggle) {
-        toggle.addEventListener( "click", function(e) {
-            e.preventDefault();
-            (this.classList.contains("is-active") === true) ? this.classList.remove("is-active") : this.classList.add("is-active");
-        });
-    }
-
-})();
-
-
-var figure = $(".video").hover( hoverVideo, hideVideo );
-
-function hoverVideo(e) {  
-    $('video', this).get(0).play(); 
-}
-
-function hideVideo(e) {
-    $('video', this).get(0).pause(); 
-}
-
-
-
-
-// jQuery to collapse the navbar on scroll
-$(window).scroll(function() {
-    if ($(".navbar").offset().top > 400) {
-        $(".navbar-fixed-top").addClass("top-nav-collapse");
-    } else {
-        $(".navbar-fixed-top").removeClass("top-nav-collapse");
-    }
-});
-
-$(window).scroll(function() {
-    if ($(".header-logo").offset().top > 400) {
-        $(".header-logo").addClass("logo-collapse", 1000, "easeInOutQuad");
-    } else {
-        $(".header-logo").removeClass("logo-collapse", 1000, "easeInOutQuad");
-    }
-});
-
-
-/*
-Tabbable content
-By Nick
-http://callmenick.com/2014/02/11/simple-tabbed-content-area-with-css-and-jquery/
- */
-// Tabbable Content
-$(document).ready(function(){
-    $("ul#tabs li").click(function(e){
-        if (!$(this).hasClass("active")) {
-            var tabNum = $(this).index();
-            var nthChild = tabNum+1;
-            $("ul#tabs li.active").removeClass("active");
-            $(this).addClass("active");
-            $("ul#tab li.active").removeClass("active");
-            $("ul#tab li:nth-child("+nthChild+")").addClass("active");
-        }
-    });
-});
-
-
