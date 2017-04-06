@@ -704,6 +704,8 @@ a.hover:hover {
     OFFICER SECTION
 =============================== */
 
+
+
 .underline1 {
     font-size: 30px !important;
     display: block;
@@ -896,10 +898,12 @@ a.hover:hover {
 }
 
 .layer-active {
+    position: relative;
     transition: all .5s !important;
     -webkit-transition: all .5s !important;
     z-index: 10000 !important;
     transform: rotateX(0deg);
+    -webkit-transform: rotateX(0deg);
 }
 
 .layer-active img {
