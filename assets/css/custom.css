@@ -612,7 +612,7 @@ a.hover:hover {
 
 #chapter-info img {
     width: 100%;
-    margin-top: 113px
+    margin-top: 0
 }
 
 #chapter-info h1 {
@@ -632,6 +632,72 @@ a.hover:hover {
     text-align: left;
     margin-top: 20px;
     padding: 0px 60px 30px 35px;
+}
+
+#nationals {
+    height: 100vh;
+}
+
+.nationals-image {
+    background: url('../img/opryland.JPG');
+    height: 100vh;
+    background-size: cover;
+    
+}
+
+#nationals p {
+    padding: 15px 30px;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+#nationals h2 {
+    padding: 15px 30px;
+    font-size: 25px;
+    line-height: 24px;
+}
+
+.awards {
+    position: relative;
+    top: 25%;
+}
+
+.awards h1 {
+    font-size: 2em;
+    text-transform: uppercase;
+    border-bottom: 3px #000 solid;
+}
+
+.award-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.award-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;;
+    border: 5px solid #044bbc;
+    font-size: 34px;
+    color: #ffffff;
+    line-height: 90px;
+    text-align: center;
+    background: #fff;
+    position: relative;
+    z-index: 1
+        
+}
+.award-circle:before {
+    position: absolute;
+    right: 2px;
+    top: 2px;
+    left: 2px;
+    bottom: 2px;
+    content: '';
+    background: #3a86ff;
+    border-radius: 50%;
+    z-index: -1;
 }
 
 /* ===============================

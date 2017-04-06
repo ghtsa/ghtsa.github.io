@@ -1411,6 +1411,9 @@ body#guide .col-sm-5,
 
 .right-ar-option .ar-hide {
     float: right;
+    position: absolute;
+    right: 0;
+    height: 650px !important;
 }
 
 .ar-hide {
@@ -1447,6 +1450,7 @@ body#guide .col-sm-5,
     -o-transform: skewX(13deg);
     -ms-transform: skewX(13deg);
     transform: skewX(13deg);
+    height: 100%;
 }
 
 .ar-option {
@@ -1543,11 +1547,12 @@ body#guide .col-sm-5,
 }
 
 .comparison {
-    margin:70px 0;
+    margin: 0 0 70px 0;
 }
 
-.comparison h1 {
+.comparison-title {
     text-align: center;
+    margin: 40px 0 0 0;
     font-size: 45px;
     text-transform: uppercase;
     padding: 15px 0;
