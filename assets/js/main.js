@@ -435,7 +435,7 @@ $(".nav-four").mouseover(function(){
     $('#nav-expand').css('background-image', 'url(assets/img/nav4.JPG)');
 });
 $(".nav-five").mouseover(function(){
-    $('#nav-expand').css('background-image', 'url(assets/img/sample6.JPG)');
+    $('#nav-expand').css('background-image', 'url(assets/img/nav10.JPG)');
 });
 
 $(".nav-list a").mouseout(function(){

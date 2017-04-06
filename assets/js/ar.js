@@ -78,23 +78,23 @@ $("#nav").click(function() {
 });
 
 $(".nav-one").mouseover(function(){
-    $('#nav-expand').css('background-image', 'url(assets/img/sample1.JPG)');
+    $('#nav-expand').css('background-image', 'url(assets/img/nav11.JPG)');
 });
 $(".nav-two").mouseover(function(){
-    $('#nav-expand').css('background-image', 'url(assets/img/sample2.JPG)');
+    $('#nav-expand').css('background-image', 'url(assets/img/nav12.JPG)');
 });
 $(".nav-three").mouseover(function(){
-    $('#nav-expand').css('background-image', 'url(assets/img/sample3.JPG)');
+    $('#nav-expand').css('background-image', 'url(assets/img/nav13.JPG)');
 });
 $(".nav-four").mouseover(function(){
-    $('#nav-expand').css('background-image', 'url(assets/img/sample4.JPG)');
+    $('#nav-expand').css('background-image', 'url(assets/img/nav4.JPG)');
 });
 $(".nav-five").mouseover(function(){
-    $('#nav-expand').css('background-image', 'url(assets/img/sample6.JPG)');
+    $('#nav-expand').css('background-image', 'url(assets/img/nav.JPG)');
 });
 
 $(".nav-list a").mouseout(function(){
-    $('#nav-expand').css('background-image', 'url(assets/img/sample5.JPG)');
+    $('#nav-expand').css('background-image', 'url(assets/img/nav10.JPG)');
 });
 
 // jQuery to collapse the navbar on scroll
