@@ -356,13 +356,6 @@ window.setInterval(function(){
         $('#box img').css('webkitTransform', 'rotateY(' + angle + 'deg)'); 
 }, 5000);
 
-var angle1 = 0
-
-window.setInterval(function(){
-    angle1 += 180;
-    $('#floating-ar').css('webkitTransition', '-webkit-transform 1.0s cubic-bezier(0,.75,.25,1)');
-    $('#floating-ar').css('webkitTransform', 'rotateY(' + angle1 + 'deg)'); 
-}, 5000);
 
 
 

@@ -944,6 +944,7 @@ p, h1, h2, h3, h4, h5, h6, li, ul, a {
 .ar-slideshow {
     background: url('../img/foreground.png');
     background-position: 0% 50%;
+    z-index: -1 !important;
 }
 
 #ar-slideshow1 {
@@ -983,9 +984,10 @@ figure {
     height: 236px;
     background: url('../img/floating.gif') center center no-repeat;
     position: fixed;
-    z-index: 9999999;
+    z-index: 999;
     top: 40%;
     text-align: center;
+    -webkit-transform: translate3d(0, 0, 1px);
 }
 
 .ar-links {
@@ -1498,22 +1500,22 @@ body#guide .col-sm-5,
 }
 
 #ar-option-one.ar-option {
-    background: url('../img/ar-home.jpg');
+    background: url('../img/hololens.jpg');
     background-size: cover;
 }
 
 #ar-option-two.ar-option {
-    background: url('../img/inspire.jpg');
+    background: url('../img/meta2.jpg');
     background-size: cover;
 }
 
 #ar-option-three.ar-option {
-    background: url('../img/syma.jpg');
+    background: url('../img/bridge.jpg');
     background-size: cover;
 }
 
 #ar-option-four.ar-option {
-    background: url('../img/vendetta.jpg');
+    background: url('../img/magicleap.jpg');
     background-size: cover;
 }
 
