@@ -1,10 +1,6 @@
-$(document).ready(function(){
-    $(window).load(function(){
-        $('#preloader-gif').fadeOut('slow',function(){$(this).remove();});
-    });
-
-});
-/*
+$(window).on('load',function() {
+    $('#preloader-gif').remove();
+});/*
 Hamburger transition tutorial
 By Nick
 http://callmenick.com/2015/01/25/animating-css-only-hamburger-menu-icons/

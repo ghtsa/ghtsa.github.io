@@ -73,6 +73,46 @@ body {
     text-rendering: optimizelegibility;
 }
 
+
+#home h1, #preloader-gif h1 {
+    font-size: 40px;
+    text-align: center;
+    padding-top: 10%;
+    color: white;
+}
+
+#preloader-gif h1 {
+    font-weight: 800 !important;
+    -webkit-text-stroke: 0px black;
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.61);
+}
+
+html div#preloader-gif {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999999999999999999999999999;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    background: #ffffff url('../img/loading-symbol.gif') no-repeat center center;
+    color: black;
+    font-size: 70px !important;
+    padding-top: 50px;
+    text-align: center;
+}
+
+@media(max-width:769px) {
+
+    #preloader-gif h1 {
+        font-weight: 400 !important;
+        font-size: 30px;
+        -webkit-text-stroke: 0px black;
+        text-shadow: 2px 2px rgba(0, 0, 0, 0.61);
+    }
+}
+
+
 /* ===============================
     Typography
 =============================== */

@@ -46,11 +46,8 @@ $("img.layer-image").click(function(){
 });
 */
 
-$(document).ready(function ( ) {
-    $(window).load(function ( ) {
-        $('#preloader-gif').fadeOut('slow', function ( ){$(this).remove ();});
-    });
-
+$(window).on('load',function() {
+    $('#preloader-gif').remove();
 });
 
 $(".layer").click(function(){
