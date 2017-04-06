@@ -605,28 +605,28 @@ a.hover:hover {
     Global Page
 =============================== */
 
-#chapter-info .col-sm-5 {
+.chapter-info .col-sm-5 {
     padding: 0;
     margin: 0;
 }
 
-#chapter-info img {
+.chapter-info img {
     width: 100%;
     margin-top: 0
 }
 
-#chapter-info h1 {
+.chapter-info h1 {
     font-size: 65px;
 }
 
-#chapter-info p {
+.chapter-info p {
     font-size: 18px;
     line-height: 24px;
     text-align: center;
     padding: 15px
 }
 
-#chapter-info p.chapter-info-text {
+.chapter-info p.chapter-info-text {
     font-size: 18px;
     line-height: 24px;
     text-align: left;
