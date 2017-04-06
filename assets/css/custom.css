@@ -496,11 +496,19 @@ a.hover:hover {
     width: 65%;
     position: absolute;
     right: 0;
+    position:absolute;
+    top:25%;
+    margin-top:-7.5%;
+    bottom:0px;
 }
 
 .hero-text {
     color: #fff;
     z-index: 99999;
+    position:absolute;
+    top:25%;
+    margin-top:-0%;
+    bottom:0px;
 }
 
 .hero-text {
