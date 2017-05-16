@@ -1095,6 +1095,8 @@ a.hover:hover {
     width: 500px !important;
     -webkit-perspective: 1000px; 
     perspective: 1000px; 
+    -webkit-transform: translate3d(0,0,0); 
+
 }
 
 .layer {
@@ -1112,6 +1114,7 @@ a.hover:hover {
     transform: rotateX(0deg);
     -webkit-transform: rotateX(0deg);
 }
+
 
 .layer-active img {
     background: rgba(255, 255, 255, 0.9) !important;
