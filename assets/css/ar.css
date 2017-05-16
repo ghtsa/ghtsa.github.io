@@ -207,6 +207,20 @@ p, h1, h2, h3, h4, h5, h6, li, ul, a {
     Nav
 =============================== */
 
+@media(max-width:768px) {
+    .nav-item p {
+        display: none;
+    }
+
+    .nav-list {
+        top: 30% !important;
+        left: -100%;
+    }
+
+    .nav-list h2 {
+        font-size: .5em
+    }
+}
 /* Typography */
 
 .nav-list {
@@ -448,6 +462,20 @@ p, h1, h2, h3, h4, h5, h6, li, ul, a {
 /* ===============================
     Hero
 =============================== */
+
+@media(max-width:768px) {
+    .hero-right {
+        background: #313658 !important;
+    }
+
+    .hero-text h1 {
+        font-size: 50px !important;
+        font-family: 'Teko', sans-serif;
+        word-spacing: 999999px;
+        text-align: left !important;
+        text-transform: uppercase;
+    }
+}
 
 .hero {
     display:flex;
@@ -981,6 +1009,8 @@ figure {
 
 #floating-ar {
     width: 100%;
+    transform: scale(.65) !important;
+    -webkit-transform: scale(.65) !important;
     height: 236px;
     background: url('../img/floating.gif') center center no-repeat;
     position: fixed;
@@ -1859,6 +1889,12 @@ ul#tab li.active {
 /* ===============================
     Footer
 =============================== */
+
+@media(max-width:768px) {
+    .footer img {
+        display: none;
+    }
+}
 
 footer {
     background: #313658;

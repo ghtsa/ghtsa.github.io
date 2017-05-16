@@ -371,8 +371,7 @@ $(document).ready(function(){
 });
 
 
-// Navbar Code
-
+           
 
 $("#nav").click(function() {
     var width = $(window).width() - 68;
@@ -429,9 +428,12 @@ $(".nav-three").mouseover(function(){
     $('#nav-expand').css('background-image', 'url(assets/img/nav3.JPG)');
 });
 $(".nav-four").mouseover(function(){
-    $('#nav-expand').css('background-image', 'url(assets/img/nav4.JPG)');
+    $('#nav-expand').css('background-image', 'url(assets/img/nav6.JPG)');
 });
 $(".nav-five").mouseover(function(){
+    $('#nav-expand').css('background-image', 'url(assets/img/nav4.JPG)');
+});
+$(".nav-six").mouseover(function(){
     $('#nav-expand').css('background-image', 'url(assets/img/nav10.JPG)');
 });
 
