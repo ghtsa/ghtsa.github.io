@@ -173,6 +173,7 @@ a:hover {
 
 a.hover {
     background-size: 100% 200%;
+    background-position: 0 0%;
     background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, #5d6d8d 50%);
     -webkit-transition: all .6s;
     -moz-transition: all .6s;
@@ -195,7 +196,7 @@ a.hover {
 }
 
 a.hover:hover {
-    background-position: 0 -200%;
+    background-position: 0 -195%;
     color: #000;
     border-bottom: 3px solid #313658;
     background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, #313658 50%);
